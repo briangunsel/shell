@@ -1,0 +1,112 @@
+int main(int argc, char **argv) {
+    prompt = "TUShell $ > ";
+
+    while(1) {
+        printfprompt);
+        scanf(command);
+
+        command[strcspn(command, "\n")] = 0;
+
+        if(strcmp(command, "exit") == 0) {
+            exit_shell
+
+        } else if(strcmp(command, "help") == 0) {
+            help
+
+        } else if(strcmp(command, "pwd") == 0) {
+            pwd
+
+        } else if(strcmp(command, "cd") == 0) {
+            change_directory
+        }
+
+	else { // external program	
+		check to see if commands contains < or >
+		if contains:
+			open argument after <,> symbol and save to input_fd
+			OR
+			open
+		if it doesnt:
+			run executable() with arguments: arguments[0], arguments, input_fd, output_fd
+
+	}
+			
+    }
+}
+
+void exit_shell() {
+    exit(0)
+}
+
+void help() {
+    help
+}
+
+char *print_directory() {
+    char *path;
+    char *buf;
+    long size;
+
+    size = pathconf(".", _PC_PATH_MAX);
+
+    if((buf = (char *)malloc((size_t)size)) != NULL) {
+        path = getcwd(buf, (size_t)size);
+    }
+
+    return path;
+}
+
+void change_dir(char *path) {
+    Change directory using chdir() function
+}
+
+Print directory() {
+	print directory using pathconf() function
+}
+
+
+Main executable function() {
+	fork new process
+
+	if pid == 0 {
+		check redirection descriptors
+
+		search path to see if contains backslash
+			if it does:
+				execv() on path
+			if no backslash:
+				path = getenv("PATH")
+				go through tokens of path with colon as delimiter
+				
+	}
+}
+
+If piping variable is set to 1, call this instead:
+pipe_exec() {
+
+ 	for i to n - 1 {
+		create pipe[I]
+	}
+	
+	for i to n {
+		fork process for pipe
+		
+		if child {	
+			if not first command:
+				set pipe to read from previous pipe
+			if not last command:
+				set pipe to write from next pipe
+
+			once pipes are set: parse pipe commands by spaces
+		
+			execute each command
+
+		} else { // parent
+			close pipes
+		}
+	
+	}	
+
+}
+
+

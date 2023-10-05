@@ -1,0 +1,17 @@
+			TUSHELL - HELP
+
+BUILT-IN COMMANDS
+
+COMMAND			DESCRIPTION
+cd			usage: cd <directory>
+			change working directory
+
+pwd			usage: pwd
+			allows you to print the current working directory
+
+exit			usage: exit
+			exits tushell
+
+redirection		usage: [process] > [file] OR [file] < [process]
+			feeds process's standard output to a file, OR
+			feed contents of file to process's standard input
